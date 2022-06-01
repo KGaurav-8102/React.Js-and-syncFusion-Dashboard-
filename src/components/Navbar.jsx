@@ -12,9 +12,9 @@ import { useStateContext } from '../contexts/contextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
      <TooltipComponent content={title} position="BottomCenter">
-          <button type="button" onClick={() => customFunc()} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
+          <button type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
                <span style={{background: dotColor}} className="absolute inline-flex rounded-full h-2 w-2
-               right-2 top-2" />
+               right-2 top-2"></span>
                     {icon}
           </button>
      </TooltipComponent>
@@ -25,7 +25,9 @@ const Navbar = () => {
 
      useEffect(() => {
           const handleResize = () => setScreenSize(window.innerWidth);
+          
           window.addEventListener('resize', handleResize);
+
           handleResize();
 
           return () => window.removeEventListener('resize', handleResize);
