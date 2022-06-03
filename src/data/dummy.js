@@ -302,6 +302,7 @@ export const barCustomSeries = [
     },
   },
 ];
+
 export const colorMappingData = [
   [
     { x: 'Jan', y: 6.96 },
